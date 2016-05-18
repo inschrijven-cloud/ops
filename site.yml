@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: yes
+  vars_files:
+    - vars/influxdb.yml
+    - vars/grafana.yml
+
+  roles:
+  - role: update_upgrade
+  - role: secure_server
+  - role: hostname
+  - role: mtchavez.influxdb
+  - role: Stouts.grafana
+
