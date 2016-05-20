@@ -4,6 +4,7 @@
   become: yes
   vars_files:
     - vars/influxdb.yml
+    - vars/secure_influxdb.yml
     - vars/grafana.yml
 
   roles:
@@ -11,5 +12,6 @@
   - role: secure_server
   - role: hostname
   - role: mtchavez.influxdb
+  - role: secure_influxdb
   - role: Stouts.grafana
 
