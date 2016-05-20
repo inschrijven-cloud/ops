@@ -7,6 +7,7 @@
     - vars/secure_influxdb.yml
     - vars/grafana.yml
     - vars/telegraf.yml
+    - vars/secure_grafana.yml
 
   roles:
   - role: update_upgrade
@@ -16,4 +17,5 @@
   - role: secure_influxdb
   - role: Stouts.grafana
   - role: dj-wasabi.telegraf
+  - role: secure_grafana
 

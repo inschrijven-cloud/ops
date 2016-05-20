@@ -1,0 +1,14 @@
+---
+
+- name: Change Grafana admin user password
+  uri:
+    url: http://localhost:3000/api/user/password
+    method: PUT
+    body_format: json
+    status_code: 200
+    body: '{"oldPassword":"{{ grafana_admin_user_default_password }}", "newPassword": "{{ grafana_admin_user_password }}", "confirmNew": "{{ grafana_admin_user_password }}"}'
+    user: admin
+    password: "{{ grafana_admin_user_default_password }}"
+    force_basic_auth: yes
+  ignore_errors: yes
+
