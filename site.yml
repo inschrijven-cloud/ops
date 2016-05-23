@@ -15,6 +15,7 @@
   - role: hostname
   - role: mtchavez.influxdb
   - role: secure_influxdb
+  - role: remove_grafana # otherwise Stouts.grafana will have version trouble
   - role: Stouts.grafana
   - role: dj-wasabi.telegraf
   - role: secure_grafana

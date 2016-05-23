@@ -1,0 +1,5 @@
+---
+
+- name: Remove Grafana (Stouts.grafana has trouble otherwise)
+  apt: name=grafana state=absent
+
