@@ -1,4 +1,0 @@
----
-influxdb_http_auth_enabled: "true"
-influxdb_admin_bind_address: "localhost:8083"
-

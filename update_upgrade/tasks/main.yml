@@ -1,4 +1,0 @@
----
-- name: Update apt cache and perform a full upgrade
-  apt: update_cache=yes upgrade=full
-

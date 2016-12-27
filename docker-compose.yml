@@ -1,0 +1,13 @@
+version: '2'
+services:
+  couchdb:
+    image: klaemo/couchdb:1.6.1
+    ports:
+      - 5984:5984 # for debugging for now, turn off in prod
+  admin_panel:
+    image: admin-panel:1.0-SNAPSHOT
+    depends_on:
+      - couchdb
+    ports:
+      - 9000:9000
+
