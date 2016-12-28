@@ -10,4 +10,12 @@ services:
       - couchdb
     ports:
       - 9000:9000
+  dashboard1:
+    image: speelsysteem-dashboard:1.1.4-SNAPSHOT
+    depends_on:
+      - couchdb
+    ports:
+      - 8080:9000
+    environment:
+      - SPEELSYSTEEM_DB=tenant-data-despeelberg
 
