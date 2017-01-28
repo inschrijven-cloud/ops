@@ -11,7 +11,7 @@ services:
     ports:
       - 9000:9000
   dashboard1:
-    image: speelsysteem-dashboard:1.1.4-SNAPSHOT
+    image: speelsysteem-dashboard:1.2.2-SNAPSHOT
     depends_on:
       - couchdb
     ports:
