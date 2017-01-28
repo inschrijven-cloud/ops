@@ -18,4 +18,8 @@ services:
       - 8080:9000
     environment:
       - SPEELSYSTEEM_DB=tenant-data-despeelberg
+  dashboard-frontend:
+    image: thomastoye/speelsysteem-dashboard-frontend:latest
+    ports:
+      - 80:80
 
