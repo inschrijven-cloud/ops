@@ -5,11 +5,19 @@ services:
     ports:
       - 5984:5984 # for debugging for now, turn off in prod
   admin_panel:
-    image: thomastoye/admin-panel:1.0-SNAPSHOT
+    image: thomastoye/admin-panel:latest
     depends_on:
       - couchdb
     ports:
       - 9000:9000
+    environment:
+      # example for Cloudant: host = $USER.cloudant.com, user and pass set, port = 443, https = true
+      - ADMIN_PANEL_SECRET="ao#5e}i7a{)ui78)a*ou86!ei£7ao^654kaou9&i87ao98i3*45y6845^%^££%Y^" # Change in production
+      - ADMIN_PANEL_DB_HOST=couchdb
+      - ADMIN_PANEL_DB_PORT=5984
+      - ADMIN_PANEL_DB_HTTPS=false
+      #- ADMIN_PANEL_DB_USER=...
+      #- ADMIN_PANEL_DB_PASS=...
   dashboard1:
     image: thomastoye/speelsysteem-dashboard:1.2.4-SNAPSHOT
     depends_on:
