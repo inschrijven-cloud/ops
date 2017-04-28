@@ -12,7 +12,7 @@ services:
       - 9000:9000
     environment:
       # example for Cloudant: host = $USER.cloudant.com, user and pass set, port = 443, https = true
-      - ADMIN_PANEL_SECRET="ao#5e}i7a{)ui78)a*ou86!ei£7ao^654kaou9&i87ao98i3*45y6845^%^££%Y^" # Change in production
+      - ADMIN_PANEL_SECRET=ao#5e}i7a{)ui78)a*ou86!ei£7ao^654kaou9&i87ao98i3*45y6845^%^££%Y^ # Change in production
       - ADMIN_PANEL_DB_HOST=couchdb
       - ADMIN_PANEL_DB_PORT=5984
       - ADMIN_PANEL_DB_HTTPS=false
@@ -25,7 +25,13 @@ services:
     ports:
       - 8080:9000
     environment:
-      - SPEELSYSTEEM_DB=tenant-data-despeelberg
+      - DASHBOARD_DB_NAME=tenant-data-despeelberg
+      - DASHBOARD_DB_HOST=couchdb
+      - DASHBOARD_DB_PORT=5984
+      - DASHBOARD_DB_HTTPS=false
+      - DASHBOARD_DB_USER=user
+      - DASHBOARD_DB_PASS=pass
+      - DASHBOARD_SECRET=i_J>LeYFiH7ec^<:mANkNMbnn2DcmQo67X>CMv]7YgJF<dn6xddk8k`h@bpr2^tb # Change in production
   dashboard-frontend:
     image: thomastoye/speelsysteem-dashboard-frontend:latest
     ports:
