@@ -4,6 +4,9 @@ services:
     image: klaemo/couchdb:1.6.1
     ports:
       - 5984:5984 # for debugging for now, turn off in prod
+    #environment:
+    #  - COUCHDB_USER=admin
+    #  - COUCHDB_PASSWORD=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f # Change in production
   admin_panel:
     image: thomastoye/admin-panel:latest
     depends_on:
@@ -16,10 +19,10 @@ services:
       - ADMIN_PANEL_DB_HOST=couchdb
       - ADMIN_PANEL_DB_PORT=5984
       - ADMIN_PANEL_DB_HTTPS=false
-      #- ADMIN_PANEL_DB_USER=...
-      #- ADMIN_PANEL_DB_PASS=...
+      #- ADMIN_PANEL_DB_USER=admin
+      #- ADMIN_PANEL_DB_PASS=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f
   dashboard1:
-    image: thomastoye/speelsysteem-dashboard:1.2.4-SNAPSHOT
+    image: thomastoye/speelsysteem-dashboard:latest
     depends_on:
       - couchdb
     ports:
@@ -29,8 +32,8 @@ services:
       - DASHBOARD_DB_HOST=couchdb
       - DASHBOARD_DB_PORT=5984
       - DASHBOARD_DB_HTTPS=false
-      - DASHBOARD_DB_USER=user
-      - DASHBOARD_DB_PASS=pass
+      #- DASHBOARD_DB_USER=admin
+      #- DASHBOARD_DB_PASS=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f
       - DASHBOARD_SECRET=i_J>LeYFiH7ec^<:mANkNMbnn2DcmQo67X>CMv]7YgJF<dn6xddk8k`h@bpr2^tb # Change in production
   dashboard-frontend:
     image: thomastoye/speelsysteem-dashboard-frontend:latest
