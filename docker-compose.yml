@@ -21,6 +21,11 @@ services:
       - ADMIN_PANEL_DB_HTTPS=false
       #- ADMIN_PANEL_DB_USER=admin
       #- ADMIN_PANEL_DB_PASS=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f
+      - ADMIN_PANEL_REMOTE_DB_USER=user
+      - ADMIN_PANEL_REMOTE_DB_PASS=pass
+      - ADMIN_PANEL_REMOTE_DB_HOST=user.cloudant.com
+      - ADMIN_PANEL_REMOTE_DB_PORT=443
+      - ADMIN_PANEL_REMOTE_DB_HTTPS=true
   dashboard1:
     image: thomastoye/speelsysteem-dashboard:latest
     depends_on:
