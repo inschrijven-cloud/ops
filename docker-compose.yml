@@ -8,7 +8,7 @@ services:
     #  - COUCHDB_USER=admin
     #  - COUCHDB_PASSWORD=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f # Change in production
   admin_panel:
-    image: thomastoye/admin-panel:latest
+    image: thomastoye/speelsysteem-admin-panel:latest
     depends_on:
       - couchdb
     ports:
