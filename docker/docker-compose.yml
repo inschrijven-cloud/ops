@@ -33,7 +33,7 @@ services:
     ports:
       - 8080:9000
     environment:
-      - DASHBOARD_DB_NAME=tenant-data-despeelberg
+      - DASHBOARD_DB_NAME=ic-despeelberg
       - DASHBOARD_DB_HOST=couchdb
       - DASHBOARD_DB_PORT=5984
       - DASHBOARD_DB_HTTPS=false
