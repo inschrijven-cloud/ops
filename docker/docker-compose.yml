@@ -7,27 +7,8 @@ services:
     #environment:
     #  - COUCHDB_USER=admin
     #  - COUCHDB_PASSWORD=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f # Change in production
-  admin_panel:
-    image: thomastoye/speelsysteem-admin-panel:latest
-    depends_on:
-      - couchdb
-    ports:
-      - 9000:9000
-    environment:
-      # example for Cloudant: host = $USER.cloudant.com, user and pass set, port = 443, https = true
-      - ADMIN_PANEL_SECRET
-      - ADMIN_PANEL_DB_HOST=couchdb
-      - ADMIN_PANEL_DB_PORT=5984
-      - ADMIN_PANEL_DB_HTTPS=false
-      #- ADMIN_PANEL_DB_USER=admin
-      #- ADMIN_PANEL_DB_PASS=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f
-      - ADMIN_PANEL_REMOTE_DB_USER
-      - ADMIN_PANEL_REMOTE_DB_PASS
-      - ADMIN_PANEL_REMOTE_DB_HOST
-      - ADMIN_PANEL_REMOTE_DB_PORT=443
-      - ADMIN_PANEL_REMOTE_DB_HTTPS=true
   dashboard1:
-    image: thomastoye/speelsysteem-dashboard:latest
+    image: thomastoye/speelplein-cloud-dashboard:latest
     depends_on:
       - couchdb
     ports:
@@ -40,6 +21,10 @@ services:
       #- DASHBOARD_DB_USER=admin
       #- DASHBOARD_DB_PASS=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f
       - DASHBOARD_SECRET
+      - DASHBOARD_REMOTE_DB_PORT
+      - DASHBOARD_REMOTE_DB_HOST
+      - DASHBOARD_REMOTE_DB_USER
+      - DASHBOARD_REMOTE_DB_PASS
   dashboard-frontend:
     image: thomastoye/speelsysteem-dashboard-frontend:latest
     ports:
