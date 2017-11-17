@@ -25,6 +25,9 @@ services:
       - DASHBOARD_REMOTE_DB_HOST
       - DASHBOARD_REMOTE_DB_USER
       - DASHBOARD_REMOTE_DB_PASS
+      - DASHBOARD_AUTH0_CLIENT_ID
+      - DASHBOARD_AUTH0_CLIENT_SECRET
+      - DASHBOARD_AUTH0_AUDIENCE
   dashboard-frontend:
     image: thomastoye/speelsysteem-dashboard-frontend:latest
     ports:
