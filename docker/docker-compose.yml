@@ -8,7 +8,7 @@ services:
     #  - COUCHDB_USER=admin
     #  - COUCHDB_PASSWORD=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f # Change in production
   dashboard1:
-    image: thomastoye/speelplein-cloud-dashboard:latest
+    image: thomastoye/inschrijven-cloud-dashboard:latest
     depends_on:
       - couchdb
     ports:
@@ -29,7 +29,7 @@ services:
       - DASHBOARD_AUTH0_CLIENT_SECRET
       - DASHBOARD_AUTH0_AUDIENCE
   dashboard-frontend:
-    image: thomastoye/speelsysteem-dashboard-frontend:latest
+    image: thomastoye/inschrijven-cloud-dashboard-frontend:latest
     ports:
       - 80:80
 
