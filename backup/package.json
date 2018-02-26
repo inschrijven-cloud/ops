@@ -1,0 +1,19 @@
+{
+  "name": "inschrijven-cloud-backup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inschrijven-cloud/ops/tree/master/backup"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudant/couchbackup": "^2.1.0",
+    "dotenv": "^5.0.0"
+  }
+}
