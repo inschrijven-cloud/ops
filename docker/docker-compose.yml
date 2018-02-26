@@ -29,7 +29,7 @@ services:
       - DASHBOARD_AUTH0_CLIENT_SECRET
       - DASHBOARD_AUTH0_AUDIENCE
   dashboard-frontend:
-    image: thomastoye/speelsysteem-dashboard-frontend:latest
+    image: thomastoye/inschrijven-cloud-dashboard-frontend:latest
     ports:
       - 80:80
 
