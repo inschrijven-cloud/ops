@@ -21,20 +21,24 @@ if(!fs.existsSync('backups')) {
 cloudant.db.list((err, allDbs) => {
   console.log('All databases: %s', allDbs.join(', '));
   
-  allDbs.forEach(db => {
-    console.log(url + db)
-    const filename = `./backups/db-backup-${db}-${new Date().toJSON()}.json`;
+  const iterable = allDbs.map(db => {
+    return () => {
+      console.log('Backing up ' + db)
+      const filename = `./backups/db-backup-${db}-${new Date().toJSON()}.json`;
 
-    couchbackup.backup(
-      url + db,
-      fs.createWriteStream(filename),
-      { parallelism: 1 },
-      (err, data) => {
-        if(err) {
-          console.error(`[${db}] FAILED: ${err}`);
+      return couchbackup.backup(
+        url + db,
+        fs.createWriteStream(filename),
+        { parallelism: 1 },
+        (err, data) => {
+          if(err) {
+            console.error(`[${db}] FAILED: ${err}`);
+          }
         }
-      }
-    );
+      );
+    }
   });
+
+  iterable.reduce((p, fn) => p.then(fn), Promise.resolve())
 });
 
