@@ -6,3 +6,8 @@ CLOUDANT_PASSWORD=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 CLOUDANT_HOST=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx-bluemix.cloudant.com
 ```
 
+Notes:
+
+* No ending slash at the end of `CLOUDANT_HOST`
+* No `https://` prefix in `CLOUDANT_HOST`
+
