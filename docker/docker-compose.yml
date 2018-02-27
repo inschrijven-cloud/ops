@@ -7,7 +7,7 @@ services:
     #environment:
     #  - COUCHDB_USER=admin
     #  - COUCHDB_PASSWORD=c57c92c3-2c51-456f-9ee6-da3ea90b1e8f # Change in production
-  dashboard1:
+  dashboard:
     image: thomastoye/inschrijven-cloud-dashboard:latest
     depends_on:
       - couchdb
