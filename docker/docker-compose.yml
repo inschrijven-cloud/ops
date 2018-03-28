@@ -28,8 +28,20 @@ services:
       - DASHBOARD_AUTH0_CLIENT_ID
       - DASHBOARD_AUTH0_CLIENT_SECRET
       - DASHBOARD_AUTH0_AUDIENCE
+      - DASHBOARD_METRICS_INTERVAL=15 minutes
+      - DASHBOARD_METRICS_INFLUXDB_HOST=metrics
+      - DASHBOARD_METRICS_INFLUXDB_PORT=8086
+      - DASHBOARD_METRICS_INFLUXDB_DB=telegraf
+      - DASHBOARD_METRICS_ENABLED=true
   dashboard-frontend:
     image: thomastoye/inschrijven-cloud-dashboard-frontend:latest
     ports:
       - 80:80
+  metrics:
+    image: samuelebistoletti/docker-statsd-influxdb-grafana:latest
+    ports:
+      - 3003:3003
+      - 8125:8125/udp
+      - 8086:8086
+      - 3004:8083
 
